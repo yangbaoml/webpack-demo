@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWwebpackPlugin = require("html-webpack-plugin");
 module.exports = {
-  entry: "./src/index.jsx",
+  entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
@@ -24,7 +24,16 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.tsx?$/,
+        use: {
+          loader: "ts-loader",
+        },
+      },
     ],
+  },
+  resolve:{
+    extensions:['.js','.jsx','.ts','.tsx']
   },
   plugins: [new HtmlWwebpackPlugin({ template: "./src/index.html" })],
 };
