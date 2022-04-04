@@ -1,3 +1,3 @@
 import ReactDOM from "react-dom";
-let root =document.getElementById("root");
-ReactDOM.createPortal(root).render(<div>hello world</div>)
+import * as React from "react";
+ReactDOM.render(<div>hello world!</div>,document.getElementById("root"));
